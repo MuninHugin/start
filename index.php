@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(-1);
+// error_reporting(-1);
 require_once 'classes/Product.php';
 require_once 'classes/I3D.php';
 require_once 'classes/IGadget.php';
