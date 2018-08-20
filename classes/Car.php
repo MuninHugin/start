@@ -4,7 +4,14 @@ class Car
 {
 	public $color;
 	public $brand;
-	public $doors = 5;
+	public $doors;
+
+	public function __construct($color, $brand, $doors = 5, $year) {
+		$this->color = $color;
+		$this->brand = $brand;
+		$this->doors = $doors;
+		$this->year = $year;
+	}
 
 	public function getCarInfo()
 	{
