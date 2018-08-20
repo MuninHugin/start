@@ -12,13 +12,5 @@ $car2->brand = "Нива";
 $car2->doors = 3;
 $car2->year = 2014;
 
-echo "Марка: {$car1->brand}<br>
-Цвет: {$car1->color}<br>
-Кол-во дверей: {$car1->doors}<br>
-Год выпуска: {$car1->year}<br>
-===========================<br>";
-echo "Марка: {$car2->brand}<br>
-Цвет: {$car2->color}<br>
-Кол-во дверей: {$car2->doors}<br>
-Год выпуска: {$car2->year}<br>
-===========================";
+echo $car1->getCarInfo();
+echo $car2->getCarInfo();
