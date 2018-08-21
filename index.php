@@ -1,14 +1,15 @@
 <?php
-require_once 'classes/Car.php';
+require_once 'classes/Product.php';
 
-echo Car::$count."<br>";
-Car::getCountCar();
-$car1 = new Car("Зелёный", "Лада калина", 5, 2017);
-Car::getCountCar();
-$car2 = new Car("Серебристый", "Нива", 3, 2014);
-Car::getCountCar();
+function debug($data) {
+	echo "<pre>" . print_r($data, 1) . "</pre>";
+}
 
-echo $car1->getCarInfo();
-echo $car2->getCarInfo();
-Car::getPrototypeCar();
-echo Car::CAR_PROTOTYPE."<br>";
+$book = new Product('Три поросенка', 300, null, 67);
+$notebook = new Product('Acer', 11000, 'AMD');
+
+echo $book->getProduct('book');
+echo $notebook->getProduct();
+
+debug($book);
+debug($notebook);
