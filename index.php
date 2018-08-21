@@ -1,14 +1,16 @@
 <?php
 require_once 'classes/Product.php';
+require_once 'classes/NotebookProduct.php';
+require_once 'classes/BookProduct.php';
 
 function debug($data) {
 	echo "<pre>" . print_r($data, 1) . "</pre>";
 }
 
-$book = new Product('Три поросенка', 300, null, 67);
-$notebook = new Product('Acer', 11000, 'AMD');
+$book = new BookProduct('Три поросенка', 300, 67);
+$notebook = new NotebookProduct('Acer', 11000, 'AMD');
 
-echo $book->getProduct('book');
+echo $book->getProduct();
 echo $notebook->getProduct();
 
 debug($book);
