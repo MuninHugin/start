@@ -14,4 +14,11 @@ class BookProduct extends Product
 		$out = parent::getProduct();
 		return $out .= "<b>Количество страниц: </b>{$this->numPages}<br>";
 	}
+
+	public function setBookDiscount($data) {
+		return $this->bookDiscount = $data;
+	}
+	public function getBookDiscount() {
+		echo $this->bookDiscount."<br>";
+	}
 }

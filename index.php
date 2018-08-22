@@ -1,6 +1,6 @@
 <?php
 require_once 'classes/Product.php';
-require_once 'classes/NotebookProduct.php';
+// require_once 'classes/NotebookProduct.php';
 require_once 'classes/BookProduct.php';
 
 function debug($data) {
@@ -8,10 +8,17 @@ function debug($data) {
 }
 
 $book = new BookProduct('Три поросенка', 300, 67);
-$notebook = new NotebookProduct('Acer', 11000, 'AMD');
+// $notebook = new NotebookProduct('Acer', 11000, 'AMD');
 
 echo $book->getProduct();
-echo $notebook->getProduct();
+// echo $notebook->getProduct();
 
 debug($book);
-debug($notebook);
+// debug($notebook);
+
+$product = new Product('test', 20);
+$product->setDiscount(30);
+$product->getDiscount();
+
+$book->setBookDiscount(50);
+$book->getBookDiscount();
