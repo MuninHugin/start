@@ -4,6 +4,7 @@ class Product
 {
 	public $name;
 	public $price;
+	public static $publishing = "Издательский дом ЭКСМО";
 
 	private $discount = 0;
 	protected $bookDiscount;
@@ -11,6 +12,10 @@ class Product
 	public function __construct($name, $price) {
 		$this->name = $name;
 		$this->price = $price;
+	}
+
+	public static function echoPublishing(){
+		echo self::$publishing;
 	}
 
 	public function getProduct() {

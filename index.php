@@ -22,3 +22,5 @@ $product->getDiscount();
 
 $book->setBookDiscount(50);
 $book->getBookDiscount();
+
+BookProduct::echoPublishing();
