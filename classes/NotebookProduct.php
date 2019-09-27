@@ -14,4 +14,15 @@ class NotebookProduct extends Product
 		$out = parent::getProduct();
 		return $out .= "<b>Процессор: </b>{$this->cpu}<br>";
 	}
+
+// abstract method
+	public function addProduct($name, $price, $cpu = ''){
+		$out = "<br>Новый комп {$name}<br>";
+		$out .= "Цена {$price}<br>";
+		$out .= "Камень {$cpu}<br>";
+		return $out;
+	}
+
+// interface
+	function getGadget(){}
 }

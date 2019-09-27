@@ -1,6 +1,6 @@
 <?php
 
-class BookProduct extends Product
+class BookProduct extends Product implements I3D
 {
 	public $numPages;
 	
@@ -21,4 +21,18 @@ class BookProduct extends Product
 	public function getBookDiscount() {
 		echo $this->bookDiscount."<br>";
 	}
+
+// abstract method
+	public function addProduct($name, $price, $namePages = 0){
+		$out = "<br>Новая книга {$name}<br>";
+		$out .= "Цена {$price}<br>";
+		$out .= "Кол-во страниц {$namePages}<br>";
+		return $out;
+	}
+
+// interface
+	public function getI3D(){
+		return self::TEST_I3D;
+	}
+
 }

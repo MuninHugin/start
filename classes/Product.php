@@ -1,6 +1,6 @@
 <?php
 
-class Product
+abstract class Product
 {
 	public $name;
 	public $price;
@@ -32,4 +32,15 @@ class Product
 	public function getDiscount() {
 		echo $this->discount."<br>";
 	}
+
+
+	// getters
+	public function getName(){
+		return $this->name;
+	}
+	public function getPrice(){
+		return $this->price;
+	}
+
+	abstract protected function addProduct($name, $price);
 }
