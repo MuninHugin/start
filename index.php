@@ -39,7 +39,8 @@ echo $book->addProduct("The call of Ktulchu", 500, 1313);
 <h3>Работа с интерфейсом</h3>
 <?
 function get3D(I3D $param) {
-	echo "<p>Книга 3D: {$param->getName()}";
+	echo "<p>Книга 3D: {$param->getName()}</p>";
+	echo "Константа интерфейса I3D: {$param->getI3D()}";
 }
 get3D($book);
 // get3D($notebook); //Ошибка
