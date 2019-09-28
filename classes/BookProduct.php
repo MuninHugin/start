@@ -1,6 +1,10 @@
 <?php
 
-class BookProduct extends Product implements I3D
+namespace classes;
+use classes\interfaces\I3D;
+use classes\interfaces\IComics;
+
+class BookProduct extends Product implements I3D, IComics
 {
 	public $numPages;
 	
@@ -34,5 +38,7 @@ class BookProduct extends Product implements I3D
 	public function getI3D(){
 		return self::TEST_I3D;
 	}
-
+	public function getIComics(){
+		return self::TEST_ICOMICS;
+	}
 }
