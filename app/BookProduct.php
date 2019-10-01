@@ -1,8 +1,9 @@
 <?php
 
-namespace classes;
-use classes\interfaces\I3D;
-use classes\interfaces\IComics;
+namespace app;
+use mycore\interfaces\I3D;
+use mycore\interfaces\IComics;
+use mycore\Product;
 
 class BookProduct extends Product implements I3D, IComics
 {

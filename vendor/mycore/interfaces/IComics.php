@@ -1,6 +1,6 @@
 <?php
 
-namespace classes\interfaces;
+namespace mycore\interfaces;
 
 interface IComics
 {

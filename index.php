@@ -1,9 +1,20 @@
 <?php
 
-use classes\BookProduct;
-use classes\NotebookProduct;
-use classes\interfaces\I3D;
-use classes\interfaces\IComics;
+use app\BookProduct;
+use app\NotebookProduct;
+use mycore\interfaces\I3D;
+use mycore\interfaces\IComics;
+
+require_once __DIR__ . "/vendor/autoload.php";
+
+// function autoloader($class){
+// 	$class = str_replace("\\", "/", $class);
+// 	$file = __DIR__."/{$class}.php";
+// 	if(file_exists($file)){
+// 		require_once $file;
+// 	}
+// }
+// spl_autoload_register('autoloader');
 
 // require_once 'interfaces/I3D.php';
 // require_once 'interfaces/IComics.php';
@@ -11,15 +22,6 @@ use classes\interfaces\IComics;
 // require_once 'classes/Product.php';
 // require_once 'classes/NotebookProduct.php';
 // require_once 'classes/BookProduct.php';
-
-function autoloader($class){
-	$class = str_replace("\\", "/", $class);
-	$file = __DIR__."/{$class}.php";
-	if(file_exists($file)){
-		require_once $file;
-	}
-}
-spl_autoload_register('autoloader');
 
 function debug($data) {
 	echo "<pre>" . print_r($data, 1) . "</pre>";
@@ -70,3 +72,9 @@ function getIComicsfunc(IComics $param) {
 	echo "Константа интерфейса IComics: {$param->getIComics()}";
 }
 getIComicsfunc($comics);
+
+
+// Автозагрузка внешних библиотек с помощью composer(итог)
+
+$mail = new \PHPMailer\PHPMailer\PHPMailer();
+debug($mail);
