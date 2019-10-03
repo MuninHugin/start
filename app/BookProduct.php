@@ -12,15 +12,17 @@ class BookProduct extends Product implements I3D, IComics
 
 	public $numPages;
 	
-	public function __construct($name, $price, $numPages)
+	public function __construct($name, $price, $numPages, $TDatePublish)
 	{
 		parent::__construct($name, $price);
 		$this->numPages = $numPages;
+		$this->TDatePublish = $TDatePublish;
 	}
 
 	public function getProduct() {
 		$out = parent::getProduct();
 		$out .= "<b>Количество страниц: </b>{$this->numPages}<br>";
+		$out .= "<b>Дата публикации :</b>{$this->TDatePublish}<br>";
 		$out .= "{$this->getTraitMethod()}<br>";
 		return $out;
 	}
@@ -46,5 +48,17 @@ class BookProduct extends Product implements I3D, IComics
 	}
 	public function getIComics(){
 		return self::TEST_ICOMICS;
+	}
+
+// Цепочка методов
+	public function getAction1()
+	{
+		echo "<p>Действие 1</p>";
+		return $this;  // (!) для цепочки методов возвращаем объект
+	}
+	public function getAction2()
+	{
+		echo "<p>Действие 2</p>";
+		return $this;  // (!) для цепочки методов возвращаем объект
 	}
 }

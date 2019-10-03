@@ -2,6 +2,8 @@
 
 use app\BookProduct;
 use app\NotebookProduct;
+use app\A;
+use app\B;
 use mycore\interfaces\I3D;
 use mycore\interfaces\IComics;
 
@@ -87,9 +89,21 @@ getIComicsfunc($comics);
 // debug($mail);
 // -----------
 
+
+// Позднее статическое связывание
+$a = new A();
+$b = new B();
+$a->getTest();
+$b->getTest();
+$b->getTest2();
+
+// Цепочка методов
+$book->getAction1()->getAction2();
+
+
+
 $a = 1; $b = 2;
 
 [$a, $b] = [$b, $a];
 
-echo $a;
-echo $b;
+echo '$a = '.$a. "<===>" .'$b = '.$b;
