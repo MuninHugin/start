@@ -4,7 +4,7 @@ namespace mycore;
 
 abstract class Product
 {
-	public $name;
+	private $name;
 	public $price;
 	public static $publishing = "Издательский дом ЭКСМО";
 
@@ -42,6 +42,14 @@ abstract class Product
 	}
 	public function getPrice(){
 		return $this->price;
+	}
+
+	// setters
+	public function setName($data){
+		return $this->name = $data;
+	}
+	public function setPrice($data){
+		return $this->price = $data;
 	}
 
 	abstract protected function addProduct($name, $price);

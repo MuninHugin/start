@@ -4,9 +4,12 @@ namespace app;
 use mycore\interfaces\I3D;
 use mycore\interfaces\IComics;
 use mycore\Product;
+use mycore\traits\TPublicationDate;
 
 class BookProduct extends Product implements I3D, IComics
 {
+	use TPublicationDate;
+
 	public $numPages;
 	
 	public function __construct($name, $price, $numPages)
@@ -17,7 +20,9 @@ class BookProduct extends Product implements I3D, IComics
 
 	public function getProduct() {
 		$out = parent::getProduct();
-		return $out .= "<b>Количество страниц: </b>{$this->numPages}<br>";
+		$out .= "<b>Количество страниц: </b>{$this->numPages}<br>";
+		$out .= "{$this->getTraitMethod()}<br>";
+		return $out;
 	}
 
 	public function setBookDiscount($data) {

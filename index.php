@@ -6,6 +6,7 @@ use mycore\interfaces\I3D;
 use mycore\interfaces\IComics;
 
 require_once __DIR__ . "/vendor/autoload.php";
+error_reporting(-1);
 
 // function autoloader($class){
 // 	$class = str_replace("\\", "/", $class);
@@ -27,12 +28,18 @@ function debug($data) {
 	echo "<pre>" . print_r($data, 1) . "</pre>";
 }
 
-$book = new BookProduct('Три поросенка', 300, 67);
-$comics = new BookProduct('Sin city', 30, 100);
+$book = new BookProduct('Три поросенка', 300, 67, 1977);
+$comics = new BookProduct('Sin city', 30, 100, 1957);
 $notebook = new NotebookProduct('Acer', 11000, 'AMD');
 
 echo $book->getProduct();
 echo $notebook->getProduct();
+
+
+// Работа с private-свойством через геттер и сеттер
+echo $book->getName();
+echo "<br>";
+echo $book->setName("testtt");
 
 debug($book);
 debug($notebook);
@@ -54,7 +61,7 @@ BookProduct::echoPublishing();
 <h3>Работа с абстрактным методом</h3>
 <?
 // abstract class
-echo $book->addProduct("The call of Ktulchu", 500, 1313);
+echo $book->addProduct("The call of Ktulchu", 500, 1313, 2014);
 
 ?>
 <hr>
@@ -69,12 +76,20 @@ get3Dfunc($book);
 
 function getIComicsfunc(IComics $param) {
 	echo "<p>Книга Comics: {$param->getName()}</p>";
-	echo "Константа интерфейса IComics: {$param->getIComics()}";
+	echo "Константа интерфейса IComics: {$param->getIComics()}<br>";
 }
 getIComicsfunc($comics);
 
 
 // Автозагрузка внешних библиотек с помощью composer(итог)
 
-$mail = new \PHPMailer\PHPMailer\PHPMailer();
-debug($mail);
+// $mail = new \PHPMailer\PHPMailer\PHPMailer();
+// debug($mail);
+// -----------
+
+$a = 1; $b = 2;
+
+[$a, $b] = [$b, $a];
+
+echo $a;
+echo $b;
