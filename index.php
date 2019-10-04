@@ -1,11 +1,7 @@
 <?php
 
-use app\BookProduct;
-use app\NotebookProduct;
-use app\A;
-use app\B;
-use mycore\interfaces\I3D;
-use mycore\interfaces\IComics;
+use app\{BookProduct, NotebookProduct, A, B, SingletonExample};
+use mycore\interfaces\{I3D, IComics};
 
 require_once __DIR__ . "/vendor/autoload.php";
 error_reporting(-1);
@@ -92,6 +88,7 @@ getIComicsfunc($comics);
 
 // Позднее статическое связывание
 $a = new A();
+$aa = new A();
 $b = new B();
 $a->getTest();
 $b->getTest();
@@ -104,6 +101,15 @@ $book->getAction1()->getAction2();
 echo $book;
 
 echo $book->name;  // Аналогично echo $book->getName();
+echo "<br><hr>";
+
+// Пример Singletone
+$a1 = SingletonExample::getInstance();
+$a2 = SingletonExample::getInstance();
+echo "<h2>Пример Singletone</h2>";
+var_dump($a1);
+echo "<br>";
+var_dump($a2);
 
 
 
