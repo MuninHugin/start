@@ -100,8 +100,14 @@ $b->getTest2();
 // Цепочка методов
 $book->getAction1()->getAction2();
 
+// Магические методы
+echo $book;
+
+echo $book->name;  // Аналогично echo $book->getName();
 
 
+
+echo "<br><hr>";
 $a = 1; $b = 2;
 
 [$a, $b] = [$b, $a];

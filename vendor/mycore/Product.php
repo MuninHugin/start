@@ -35,6 +35,19 @@ abstract class Product
 		echo $this->discount."<br>";
 	}
 
+	// Магические методы
+	public function __toString()
+	{
+		return "Магический метод __toString<br>";
+	}
+	public function __get($data)
+	{
+		$data = ucfirst($data);
+		$method = "get{$data}";
+		if(method_exists($this, $method))
+		return $this->$method();
+	}
+
 
 	// getters
 	public function getName(){
