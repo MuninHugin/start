@@ -120,7 +120,7 @@ $a = 1; $b = 2;
 
 echo '$a = '.$a. "<===>" .'$b = '.$b;
 
-echo "Test rebase from master branch +++";
+echo "Test rebase from master branch +++!!!!!!";
 echo "Changes in master before rebase";
 echo "Test rebase from master branch. Change #1";
 echo "Test merge from master branch. Change #1";
