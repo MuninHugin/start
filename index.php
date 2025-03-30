@@ -122,3 +122,4 @@ echo '$a = '.$a. "<===>" .'$b = '.$b;
 
 echo "Test rebase from master branch";
 echo "Changes in master before rebase";
+echo "Test rebase from master branch. Change #1";
